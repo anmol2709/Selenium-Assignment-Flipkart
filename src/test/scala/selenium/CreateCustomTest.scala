@@ -2,12 +2,15 @@ package selenium
 
 import java.util.concurrent.TimeUnit
 
+import org.apache.log4j.Logger
 import org.openqa.selenium.By
 import org.openqa.selenium.interactions.Actions
 import org.scalatest.FlatSpec
 
 
 class CreateCustomTest extends FlatSpec with TestSetUp {
+
+  val log = Logger.getLogger(this.getClass)
 
   "A user" should "visit on flipkart.com" in {
     driver.manage().window().maximize()
@@ -53,8 +56,8 @@ class CreateCustomTest extends FlatSpec with TestSetUp {
     Thread.sleep(2000)
     driver.findElementByCssSelector(".AsXM8z .row ._3NFO0d").click()
     val cart = driver.findElementByCssSelector("._1k-OSK span:nth-child(2)")
-    if (cart.getText == "2") println("Item added")
-    else println("Item not added")
+    if (cart.getText == "2") log.info("Item added")
+    else log.info("Item not added")
   }
 
   "user" should "Confirm order" in {
