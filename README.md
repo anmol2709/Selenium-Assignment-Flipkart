@@ -18,3 +18,4 @@ Points To Be Noted :
 *  Please use your flipkart id and password
 *  Please empty your cart initially and store no address
 *  Minor problems with implicit waits thus using thread.sleep sometimes 
+* Please check the items being ordered are in stock. 
